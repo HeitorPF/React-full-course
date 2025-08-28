@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>4d</title>
+    <style>
+      h1 {
+        font-size: 1.5rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 300;
+      }
+      input {
+        display: block;
+        padding: .5rem;
+        margin-top: .5rem;
+      }
+      button {
+        background-color: rgb(0, 123, 255);
+        color: #FFF;
+        border: none;
+        border-radius: .3rem;
+        padding: .7rem;
+        margin-right: .3rem;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+      function App() {
+
+        function LoginForm() {
+
+          return (
+            <div className="form-container">
+              <input placeholder="Email"/>
+              <input placeholder="Password" type="password"/>
+              <button className="botao-login">Login</button>
+              <button className="botao-sign-up">Sign up</button>
+            </ div>
+          )
+        }
+
+        return (
+          <>
+            <h1>Hello, welcome to my website</h1>
+            <LoginForm />
+          </>
+        )
+      }
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>
