@@ -1,0 +1,18 @@
+.email-input, .senha-input {
+  padding: .5rem;
+  margin-top: .5rem;
+}
+
+.botao-mostrar-senha {
+  margin-left: .5rem;
+}
+
+.botao-login, .botao-sign-up {
+  background-color: rgb(0, 123, 255);
+  color: #FFF;
+  border: none;
+  border-radius: .3rem;
+  padding: .7rem;
+  margin-right: .3rem;
+  margin-top: 1rem;
+}
