@@ -7,7 +7,6 @@ export function CheckoutPage() {
     <>
       <title>Checkout</title>
 
-      <body>
         <div className="checkout-header">
           <div className="header-content">
             <div className="checkout-header-left-section">
@@ -220,7 +219,6 @@ export function CheckoutPage() {
             </div>
           </div>
         </div>
-      </body>
     </>
   )
 }
