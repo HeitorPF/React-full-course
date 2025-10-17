@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 import Logo from '../../assets/images/logo.png'
 import MobileLogo from '../../assets/images/mobile-logo.png'
+import CheckoutLockIcon from '../../assets/images/icons/checkout-lock-icon.png'
 import './checkoutHeader.css'
 
 export function CheckoutHeader() {
@@ -22,7 +23,7 @@ export function CheckoutHeader() {
           </div>
 
           <div className="checkout-header-right-section">
-            <img src="images/icons/checkout-lock-icon.png" />
+            <img src={CheckoutLockIcon} />
           </div>
         </div>
       </div>
