@@ -49,7 +49,7 @@ export function CheckoutPage() {
                       Choose a delivery option:
                     </div>
                     <div className="delivery-option">
-                      <input type="radio" checked
+                      <input type="radio" /*checked*/
                         className="delivery-option-input"
                         name="delivery-option-1" />
                       <div>
@@ -138,7 +138,7 @@ export function CheckoutPage() {
                       </div>
                     </div>
                     <div className="delivery-option">
-                      <input type="radio" checked className="delivery-option-input"
+                      <input type="radio" /*checked*/ className="delivery-option-input"
                         name="delivery-option-2" />
                       <div>
                         <div className="delivery-option-date">
