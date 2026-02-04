@@ -5,13 +5,13 @@ import SearchIcon from '../assets/images/icons/search-icon.png'
 import CartIcon from '../assets/images/icons/cart-icon.png'
 import './Header.css'
 
-export function Header() {
+export function Header({ cart }) {
 
   let totalQuantity = 0
 
-  // cart.forEach(cartItem => {
-  //   totalQuantity += cartItem.quantity
-  // });
+  cart.forEach(cartItem => {
+    totalQuantity += cartItem.quantity
+  });
 
   return (
     <>
