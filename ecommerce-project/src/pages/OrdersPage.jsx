@@ -1,16 +1,26 @@
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
 import { Header } from '../components/Header'
 import BuyAgain from '../assets/images/icons/buy-again.png'
 import './OrdersPage.css'
 
-export function OrdersPage() {
+export function OrdersPage({ cart }) {
+  const [orders, setOrders] = useState([])
+
+  useEffect(() => {
+    axios.get('/api/orders?expand=products')
+    .then((response) => {
+      setOrders(response.data)
+    })
+  }, [])
 
   return (
     <>
       <link rel="icon" type="image/svg+xml" href="../../public/orders-favicon.png" />
       <title>Orders</title>
 
-      <Header />
+      <Header cart={cart}/>
 
       <div className="orders-page">
         <div className="page-title">Your Orders</div>
