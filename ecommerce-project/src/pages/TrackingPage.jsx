@@ -6,8 +6,8 @@ import { useEffect, useState } from "react"
 import './TrackingPage.css'
 
 
-export function TrackingPage({cart}) {
-  const {orderId, productId} = useParams()
+export function TrackingPage({ cart }) {
+  const { orderId, productId } = useParams()
   const [order, setOrder] = useState(null)
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export function TrackingPage({cart}) {
     fetchTrackingData()
   }, [orderId])
 
-  if(!order) return null
+  if (!order) return null
 
   const orderProduct = order.products.find((orderProduct) => {
     return orderProduct.productId === productId;
@@ -27,9 +27,9 @@ export function TrackingPage({cart}) {
 
   const totalDeliveryTime = orderProduct.estimatedDeliveryTimeMs - order.orderTimeMs
   const timePassedMs = dayjs().valueOf() - order.orderTimeMs
-  
+
   let deliveryPercent = (timePassedMs / totalDeliveryTime) * 100
-  if(deliveryPercent > 100) {
+  if (deliveryPercent > 100) {
     deliveryPercent = 100
   }
 
@@ -38,7 +38,7 @@ export function TrackingPage({cart}) {
     <>
       <link rel="icon" type="image/svg+xml" href="../../public/tracking-favicon.png" />
       <title>Tracking</title>
-      <Header cart={cart}/>
+      <Header cart={cart} />
 
       <div className="tracking-page">
         <div className="order-tracking">
@@ -47,7 +47,7 @@ export function TrackingPage({cart}) {
           </Link>
 
           <div className="delivery-date">
-            Arriving on {dayjs(orderProduct.estimatedDeliveryTimeMs).format('dddd, MMMM D')}
+            {deliveryPercent >= 100 ? 'Delivered on' : 'Arriving on'} {dayjs(orderProduct.estimatedDeliveryTimeMs).format('dddd, MMMM D')}
           </div>
 
           <div className="product-info">
@@ -73,7 +73,7 @@ export function TrackingPage({cart}) {
           </div>
 
           <div className="progress-bar-container">
-            <div style={{width: `${deliveryPercent}%`}} className="progress-bar"></div>
+            <div style={{ width: `${deliveryPercent}%` }} className="progress-bar"></div>
           </div>
         </div>
       </div>
