@@ -1,16 +1,16 @@
 import { Header } from "../components/Header"
 import './ErrorPage.css'
 
-export function ErrorPage() {
+export function ErrorPage({ cart }) {
 
   return (
     <>
-      <Header />
+      <Header cart={cart} />
 
       <div className="error-page">
         <h1>Page not found</h1>
       </div>
-      
+
     </>
   )
 }
